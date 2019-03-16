@@ -1,0 +1,22 @@
+{
+  "name": "projectmilena",
+  "description": "my first project",
+  "main": "index.js",
+  "authors": [
+    "Ekaterina Voronkevich"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/src/bower_components/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-scss": "^3.0.3"
+  }
+}

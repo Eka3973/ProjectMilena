@@ -1,0 +1,220 @@
+.aboutMe {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  width: 100%;
+}
+.aboutMe__block-green {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  height: 170px;
+  background: linear-gradient(to bottom, #bfe3a4, #fffff5);
+  @media (max-width: 1030px){
+    height: 16.505vw;
+  }
+  @media (max-width: 768px) {
+    align-items: center;
+  }
+}
+.aboutMe__green-center {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 940px;
+  height: 100px;
+  @media (max-width: 1030px) {
+    width: 91.263vw;
+    height: 9.709vw;
+  }
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
+}
+.aboutMe__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 470px;
+  height: inherit;
+  text-transform: uppercase;
+  font-size: $size-title;
+  color: $dark-turquoise;
+  letter-spacing: 0.1em;
+  @media (max-width: 1030px){
+    width: 45.632vw;
+    height: inherit;
+    font-size: $size-title-media1030;
+  }
+  @media (max-width: 768px){
+    font-size: $size-title-media748;
+  }
+}
+.aboutMe__block-beige {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: #fffff5;
+}
+.aboutMe__beige-center {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 940px;
+  height: 467px;
+  @media (max-width: 1030px){
+    width: 91.263vw;
+    height: 45.34vw;
+  }
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+}
+.img {
+  display: block;
+  position: relative;
+  width: 400px;
+  height: 402px;
+
+  @media (max-width: 1030px){
+    width: 38.835vw;
+    height: 39.03vw;
+  }
+  @media (max-width: 768px) {
+    width: 41.67vw;
+    height: 52vw;
+  }
+}
+.img__style {
+  display: block;
+  margin-top: -100px;
+  max-width: 100%;
+  height: auto;
+  box-shadow: 0 0 10px black;
+  align-self: center;
+  @media (max-width: 1030px){
+    margin-top: -9.709vw;
+  }
+  @media (max-width: 768px){
+   margin-top: 0;
+  }
+}
+.article {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: center;
+  width: 470px;
+  @media (max-width: 1030px){
+    width: 45.632vw;
+  }
+  @media (max-width: 768px) {
+    width: inherit;
+  }
+}
+.article__text {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  width: inherit;
+  height: 347px;
+  font-size: 18px;
+  text-align: justify;
+  @media (max-width: 1030px){
+    font-size: calc( 16px + (18 - 16) * (100vw - 320px) / (1030 - 320));
+    height: 33.69vw;
+  }
+  @media (max-width: 842px){
+    height: 36vw;
+  }
+  @media (max-width: 768px){
+    margin-top: 0.3em;
+    height: auto;
+  }
+}
+.button-aboutMe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: inherit;
+  height: 65px;
+  @media (max-width: 1030px){
+    height: 6.31vw;
+  }
+
+  @media (max-width: 768px){
+    align-items: center;
+    height: calc( 70px + (100 - 70) * (100vw - 320px) / (768 - 320));
+  }
+}
+
+.modal-overlay {
+   @include overlay;
+  }
+
+.modal-overlay.active {
+  @include modalOverlayActive;
+  }
+
+.modal {
+  @include modalS;
+  background: linear-gradient(to bottom, #bfe3a4, #fffff5);
+}
+
+.close-modal {
+  @include closeModal;
+}
+
+.modal-content {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  padding: 20px 50px 20px 20px;
+  font-size: 1.08em;
+}
+.model__title {
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  color: $dark-turquoise;
+  font-size: $size-title;
+  @media (max-width: 1030px){
+    font-size: $size-title-media1030;
+  }
+  @media (max-width: 768px){
+    font-size: $size-title-media748;
+
+  }
+}
+.modal.active {
+  @include modalActive;
+}
+
+.modal.active .close-modal {
+  @include modalActiveClose
+}
+
+.modal-content {
+  text-align: justify;
+}
+
+/**
+ * Mobile styling
+ */
+
+@media (max-width: 900px) {
+  .modal {
+    @include ModalMobile
+  }
+  .modal-content {
+    font-size: 1em;
+
+  }
+}
+

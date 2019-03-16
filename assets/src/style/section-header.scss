@@ -1,0 +1,162 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 52vw;
+  background-color: black;
+  background: url("../img/background-large.jpg") no-repeat center;
+  background-size: cover;
+  color: white;
+  text-transform: uppercase;
+  @media (max-width: 990px) {
+    background: url("../img/background-medium.jpg") no-repeat center;
+    background-size: cover;
+  }
+  @media (max-width: 768px) {
+    background: url("../img/background-small.jpg") no-repeat center;
+    background-size: cover;
+  }
+}
+.nav {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-around;
+  width: 620px;
+  height: 8vw;
+  @media (max-width: 1280px) {
+    width: calc( 280px + (620 - 280) * (100vw - 320px) / (1280 - 320));
+  }
+ }
+.nav__link-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 130px;
+  height: 40px;
+  color: white;
+  font-size: 16px;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  @media (max-width: 1280px) {
+    width: calc(60px + (130 - 60) * (100vw - 320px) / (1280 - 320));
+    height: calc(16px + (40 - 16) * (100vw - 320px) / (1280 - 320));
+    font-size: calc( 7px + (16 - 7) * (100vw - 320px) / (1280 - 320));
+  }
+}
+.nav__link-item_border {
+  border: 1px solid white;
+  border-radius: 4px;
+  @media (max-width: 320px) {
+    border: 0.5px solid white;
+    border-radius: 2px;
+  }
+}
+.nav__link-item:hover {
+  background-color: #6b874f;
+  color: #0a0f05;
+  border: 1px solid  #6b874f;
+  font-weight: bolder;
+  border-radius: 4px;
+}
+.nav__link-item:active {
+  background-color: #6b874f;
+  color: #0a0f05;
+  text-shadow: 0 -1px rgba(0, 0, 0, .3), 0 0 5px #ffd, 0 0 8px #fff;
+  border: 1px solid white;
+}
+.header__title {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 42vw;
+}
+.header__title-h1 {
+ font-size: calc( 20px + (95 - 20) * (100vw - 320px) / (1920 - 320));
+ letter-spacing: 0.12em;
+}
+.header__title-span {
+  font-size: calc( 10px + (40 - 10) * (100vw - 320px) / (1920 - 320));
+  letter-spacing: 0.15em;
+}
+
+.modal-contact-overlay {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 0.89);
+  visibility: hidden;
+  transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), visibility 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.modal-contact-overlay.active-contact {
+  @include modalOverlayActive;
+}
+
+.modal-contact {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: 500px;
+  height: 350px;
+  padding: 1rem;
+  border-radius: 3px;
+  overflow-y: auto;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transform: scale(1.2);
+  transition: all 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+  transition-delay: 0.3s;
+  background: linear-gradient(to bottom, #bfe3a4, #fffff5);
+  text-align: center;
+}
+
+.modal-contact-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  font-size: 1.08em;
+}
+
+.modal-contact.active-contact {
+  @include modalActive
+}
+
+.modal-contact.active-contact .close-modal {
+  @include modalActiveClose
+}
+.modal-contact-text {
+  font-size: 20px;
+  padding: 1em;
+  @media (max-width: 768px) {
+    font-size: calc(18px + (20 - 18) * (100vw - 320px) / (1030 - 320));
+  }
+}
+.modal-contact-email {
+  color: $dark-turquoise;
+  font-size: 25px;
+  @media (max-width: 768px) {
+    font-size: calc(22px + (25 - 22) * (100vw - 280px) / (1030 - 280));
+  }
+}
+.modal-contact-email:hover {
+   color: #955d21;
+ }
+@media (max-width: 900px) {
+  .modal {
+    @include ModalMobile
+  }
+}
